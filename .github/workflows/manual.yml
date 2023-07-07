@@ -22,6 +22,6 @@ jobs:
           elif [[ "${{ env.helm_name }}" == "layout" ]]; then
               helm_name="layout_svc"
           fi
-          echo "::set-env name=helm_name::$helm_name"
+          echo "::set-output name=helm_name::$helm_name"
       - name: Display Helm Name
         run: echo "Helm Name:$helm_name "
