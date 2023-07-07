@@ -1,9 +1,7 @@
 name: Assign Helm Name
 
 on:
-  push:
-    branches:
-      - main
+  workflow_dispatch:
 
 jobs:
   build:
