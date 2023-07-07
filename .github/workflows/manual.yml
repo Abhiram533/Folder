@@ -18,9 +18,9 @@ jobs:
         id: set_helm_name
         run: |
           if [[ $helm_name  == "loads" || $helm_name  == "geography" ]]; then
-              $helm_name = loads_svc
+              helm_name=loads_svc
           elif [[ "${{ env.helm_name }}" == "layout" ]]; then
-              $helm_name = layout_svc
+              helm_name=layout_svc
           fi
 
       - name: Display Helm Name
