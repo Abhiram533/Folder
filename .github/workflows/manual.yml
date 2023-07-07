@@ -17,9 +17,9 @@ jobs:
       - name: Set Helm Name
         id: set_helm_name
         run: |
-          if [[ "${{ github.event.inputs.helm_input }}" == "load" ]]; then
+          if [[ "${{ github.event.inputs.helm_name }}" == "load" ]]; then
             echo "load_svc" >> $GITHUB_ENV
-          elif [[ "${{ github.event.inputs.helm_input }}" == "layout" ]]; then
+          elif [[ "${{ github.event.inputs.helm_name }}" == "layout" ]]; then
             echo "layout_svc" >> $GITHUB_ENV
           else
             echo "Invalid input. No helm_name will be set."
