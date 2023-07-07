@@ -18,10 +18,9 @@ jobs:
         id: set_helm_name
         run: |
           if [[ "${{ env.helm_name }}"  == "loads" || "${{ env.helm_name }}"  == "geography" ]]; then
-              helm_name="loads_svc"
+              env.helm_name="loads_svc"
           elif [[ "${{ env.helm_name }}" == "layout" ]]; then
-              helm_name="layout_svc"
+              env.helm_name="layout_svc"
           fi
-          echo "::set-output name=helm_name::$helm_name"
       - name: Display Helm Name
-        run: echo "Helm Name:$helm_name "
+        run: echo "Helm Name:${{ env.helm_name }} "
